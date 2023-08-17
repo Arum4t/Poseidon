@@ -1,6 +1,7 @@
 package com.nnk.springboot.configuration;
 
 import com.nnk.springboot.services.CustomUserDetailsService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,28 +17,26 @@ import org.springframework.security.web.SecurityFilterChain;
 @EnableWebSecurity
 public class SpringSecurityConfig {
 
+    @Autowired
+    UserDetailsService userDetailsService;
+
     @Bean
     public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-        http
-                .csrf((csrf) -> csrf
-                        .ignoringRequestMatchers("/no-csrf")
-                );
-        http
-                .authorizeHttpRequests((requests) -> requests
-                    .requestMatchers("/login","/css/*", "/user/add").permitAll()
-                    .anyRequest().authenticated()
+        http.authorizeHttpRequests((requests) -> requests
+                        .requestMatchers("/login","/css/*", "/user/add").permitAll()
+                        .anyRequest().authenticated()
                 )
                 .formLogin((form) -> form
-                    .loginPage("/login")
-                    .defaultSuccessUrl("/bidList/list",true)
+                        .loginPage("/login")
+                        .defaultSuccessUrl("/bidList/list",true)
                 )
                 .logout((logout) -> logout
                         .logoutUrl("/logout")
-                        .logoutSuccessUrl("/login"));
+                        .logoutSuccessUrl("/login").permitAll());
 
         return http.build();
     }
@@ -45,9 +44,4 @@ public class SpringSecurityConfig {
     public AuthenticationManager authenticationManager(AuthenticationConfiguration authenticationConfiguration) throws Exception {
         return authenticationConfiguration.getAuthenticationManager();
     }
-    @Bean
-    public UserDetailsService userDetailsService(){
-        return new CustomUserDetailsService();
-}
-
 }

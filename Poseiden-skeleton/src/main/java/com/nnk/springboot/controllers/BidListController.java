@@ -25,8 +25,7 @@ private BidListRepository bidListRepository;
     @RequestMapping("/bidList/list")
     public String home(Model model) {
         // TODO: call service find all bids to show to the view
-        List<BidList> bidList = bidListRepository.findAll();
-        model.addAttribute("bidList", bidList);
+        model.addAttribute("bidList", bidListRepository.findAll());
         return "bidList/list";
     }
 

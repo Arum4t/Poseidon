@@ -8,10 +8,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 
 @Controller
@@ -29,7 +26,7 @@ public class UserController {
         return "user/login";
     }
 
-    @RequestMapping("/user/list")
+    @RequestMapping(value = "/user/list")
     public String home(Model model)
     {
         model.addAttribute("users", userRepository.findAll());
@@ -67,9 +64,6 @@ public class UserController {
         if (result.hasErrors()) {
             return "user/update";
         }
-
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-        user.setPassword(encoder.encode(user.getPassword()));
         user.setId(id);
         userRepository.save(user);
         model.addAttribute("users", userRepository.findAll());

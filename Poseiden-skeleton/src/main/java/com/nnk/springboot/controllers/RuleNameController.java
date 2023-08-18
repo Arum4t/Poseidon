@@ -39,7 +39,7 @@ public class RuleNameController {
         }
         ruleNameRepository.save(ruleName);
         model.addAttribute("message", "RuleName add successfully !");
-        return "ruleName/add";
+        return "redirect:/ruleName/list";
     }
 
     @GetMapping("/ruleName/update/{id}")

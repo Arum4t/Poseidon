@@ -22,7 +22,7 @@ public class TradeController {
     public String home(Model model)
     {
         // TODO: find all Trade, add to model
-        model.addAttribute("trades", tradeRepository.findAll());
+        model.addAttribute("trade", tradeRepository.findAll());
         return "trade/list";
     }
 
@@ -39,7 +39,7 @@ public class TradeController {
         }
         tradeRepository.save(trade);
         model.addAttribute("message", "Trade add successfully !");
-        return "trade/add";
+        return "redirect:/trade/list";
     }
 
     @GetMapping("/trade/update/{id}")

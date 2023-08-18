@@ -42,7 +42,7 @@ private BidListRepository bidListRepository;
         }
         bidListRepository.save(bid);
         model.addAttribute("message", "BidList add successfully !");
-        return "bidList/add";
+        return "redirect:/bidList/list";
     }
 
     @GetMapping("/bidList/update/{id}")

@@ -39,7 +39,7 @@ public class RatingController {
         }
         ratingRepository.save(rating);
         model.addAttribute("message", "Rating add successfully !");
-        return "rating/add";
+        return "redirect:/rating/list";
     }
 
     @GetMapping("/rating/update/{id}")

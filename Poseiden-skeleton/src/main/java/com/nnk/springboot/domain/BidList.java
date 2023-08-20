@@ -3,6 +3,7 @@ package com.nnk.springboot.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -23,12 +24,20 @@ public class BidList {
     private String type;
 
     @NotNull(message = "must not be null")
+    @Pattern(regexp = "^\\d+$",
+            message = "can only contain numbers")
     private Double bidQuantity;
 
+    @Pattern(regexp = "^\\d+$",
+            message = "can only contain numbers")
     private Double askQuantity;
 
+    @Pattern(regexp = "^\\d+$",
+            message = "can only contain numbers")
     private Double bid;
 
+    @Pattern(regexp = "^\\d+$",
+            message = "can only contain numbers")
     private Double ask;
 
     private String benchmark;

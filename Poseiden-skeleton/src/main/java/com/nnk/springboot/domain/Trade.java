@@ -3,6 +3,7 @@ package com.nnk.springboot.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -25,12 +26,20 @@ public class Trade {
     private String type;
 
     @NotNull(message = "must not be null")
+    @Pattern(regexp = "^\\d+$",
+            message = "can only contain numbers")
     private Double buyQuantity;
 
+    @Pattern(regexp = "^\\d+$",
+            message = "can only contain numbers")
     private Double sellQuantity;
 
+    @Pattern(regexp = "^\\d+$",
+            message = "can only contain numbers")
     private Double buyPrice;
 
+    @Pattern(regexp = "^\\d+$",
+            message = "can only contain numbers")
     private Double sellPrice;
 
     private Timestamp tradeDate;

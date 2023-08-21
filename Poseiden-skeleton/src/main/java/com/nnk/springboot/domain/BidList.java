@@ -24,20 +24,12 @@ public class BidList {
     private String type;
 
     @NotNull(message = "must not be null")
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double bidQuantity;
 
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double askQuantity;
 
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double bid;
 
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double ask;
 
     private String benchmark;

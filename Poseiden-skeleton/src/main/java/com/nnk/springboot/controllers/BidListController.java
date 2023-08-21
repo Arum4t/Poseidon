@@ -38,7 +38,7 @@ private BidListRepository bidListRepository;
     public String validate(@Valid BidList bid, BindingResult result, Model model) {
         // TODO: check data valid and save to db, after saving return bid list
         if (result.hasErrors()) {
-            return "bidList/add";
+            return "bidList/list";
         }
         bidListRepository.save(bid);
         model.addAttribute("message", "BidList add successfully !");

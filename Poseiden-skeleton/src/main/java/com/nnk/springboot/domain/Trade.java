@@ -26,20 +26,12 @@ public class Trade {
     private String type;
 
     @NotNull(message = "must not be null")
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double buyQuantity;
 
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double sellQuantity;
 
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double buyPrice;
 
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double sellPrice;
 
     private Timestamp tradeDate;

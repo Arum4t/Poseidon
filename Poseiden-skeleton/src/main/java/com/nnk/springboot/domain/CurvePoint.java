@@ -21,13 +21,9 @@ public class CurvePoint {
     private Integer curveId;
 
     @NotNull(message = "must not be null")
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double term;
 
     @NotNull(message = "must not be null")
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Double value;
 
     private Timestamp asOfDate;

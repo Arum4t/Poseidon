@@ -26,8 +26,6 @@ public class Rating {
     private String fitchRating;
 
     @NotNull(message = "must not be null")
-    @Pattern(regexp = "^\\d+$",
-            message = "can only contain numbers")
     private Integer orderNumber;
 
     public Rating() {

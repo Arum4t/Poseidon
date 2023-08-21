@@ -39,8 +39,8 @@ public class CurveController {
             return "curvePoint/add";
         }
         curvePointRepository.save(curvePoint);
-        model.addAttribute("message", "CurvePoint add successfully !");
-        return "curvePoint/add";
+        model.addAttribute("message", "CurvePoint add !");
+        return "redirect:/curvePoint/list";
     }
 
     @GetMapping("/curvePoint/update/{id}")

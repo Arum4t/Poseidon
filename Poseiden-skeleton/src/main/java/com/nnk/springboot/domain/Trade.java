@@ -3,17 +3,20 @@ package com.nnk.springboot.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.sql.Timestamp;
-
+/**
+ * Model of a transaction
+ *
+ * @author Quentin
+ *
+ */
 
 @Entity
 @Data
 @Table(name = "trade")
 public class Trade {
-    // TODO: Map columns in data table TRADE with corresponding java fields
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "trade_id", nullable = false)

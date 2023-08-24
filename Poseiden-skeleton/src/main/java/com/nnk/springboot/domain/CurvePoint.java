@@ -2,16 +2,20 @@ package com.nnk.springboot.domain;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.sql.Timestamp;
-
+/**
+ * Model of curvePoint
+ *
+ * @author Quentin
+ *
+ */
 @Entity
 @Data
 @Table(name = "curvepoint")
 public class CurvePoint {
-    // TODO: Map columns in data table CURVEPOINT with corresponding java fields
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id", nullable = false)

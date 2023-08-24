@@ -3,12 +3,17 @@ package com.nnk.springboot.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
-
+/**
+ * Model of the rules
+ *
+ * @author Quentin
+ *
+ */
 @Entity
 @Data
 @Table(name = "rulename")
 public class RuleName {
-    // TODO: Map columns in data table RULENAME with corresponding java fields
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id", nullable = false)

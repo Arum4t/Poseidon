@@ -7,12 +7,23 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-
+/**
+ * Classic userDetailsService, help found user who try to connect to the app by their username
+ * using a query findByUsername
+ * @see UserRepository
+ *
+ * @author Quentin
+ *
+ */
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
     @Autowired
     private UserRepository userRepository;
+
+    /**
+     * @return a UserDetails entity
+     */
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

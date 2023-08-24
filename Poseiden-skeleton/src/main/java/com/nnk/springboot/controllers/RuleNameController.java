@@ -12,16 +12,20 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+/**
+ * CRUD for ruleName
+ *
+ * @author Quentin
+ */
 @Controller
 public class RuleNameController {
-    // TODO: Inject RuleName service
+
     @Autowired
     private RuleNameRepository ruleNameRepository;
 
     @RequestMapping("/ruleName/list")
-    public String home(Model model)
+    public String getRuleNameList(Model model)
     {
-        // TODO: find all RuleName, add to model
         model.addAttribute("ruleName", ruleNameRepository.findAll());
         return "ruleName/list";
     }
@@ -32,8 +36,7 @@ public class RuleNameController {
     }
 
     @PostMapping("/ruleName/validate")
-    public String validate(@Valid RuleName ruleName, BindingResult result, Model model) {
-        // TODO: check data valid and save to db, after saving return RuleName list
+    public String validateRule(@Valid RuleName ruleName, BindingResult result, Model model) {
         if (result.hasErrors()) {
             return "ruleName/add";
         }
@@ -43,8 +46,7 @@ public class RuleNameController {
     }
 
     @GetMapping("/ruleName/update/{id}")
-    public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        // TODO: get RuleName by Id and to model then show to the form
+    public String showUpdateRuleForm(@PathVariable("id") Integer id, Model model) {
         RuleName ruleName = ruleNameRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid ruleName Id:" + id));
         model.addAttribute("ruleName", ruleName);
         return "ruleName/update";
@@ -53,7 +55,6 @@ public class RuleNameController {
     @PostMapping("/ruleName/update/{id}")
     public String updateRuleName(@PathVariable("id") Integer id, @Valid RuleName ruleName,
                              BindingResult result, Model model) {
-        // TODO: check required fields, if valid call service to update RuleName and return RuleName list
         if (result.hasErrors()) {
             return "ruleName/update";
         }
@@ -65,7 +66,6 @@ public class RuleNameController {
 
     @GetMapping("/ruleName/delete/{id}")
     public String deleteRuleName(@PathVariable("id") Integer id, Model model) {
-        // TODO: Find RuleName by Id and delete the RuleName, return to Rule list
         ruleNameRepository.findAll();
         RuleName ruleName = ruleNameRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid ruleName Id:" + id));
         ruleNameRepository.delete(ruleName);

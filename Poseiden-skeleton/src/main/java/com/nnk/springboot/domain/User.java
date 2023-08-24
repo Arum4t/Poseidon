@@ -3,7 +3,12 @@ package com.nnk.springboot.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
-
+/**
+ * User of the application
+ *
+ * @author Quentin
+ *
+ */
 @Entity
 @Table(name = "users")
 public class User {

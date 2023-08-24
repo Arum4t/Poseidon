@@ -1,6 +1,6 @@
 package com.nnk.springboot.configuration;
 
-import com.nnk.springboot.services.CustomUserDetailsService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +13,15 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+
+/**
+ * Configuration of spring security to allow authentication for users and access to url depending on their roles
+ * Personalize login using a different html page and logout
+ * Bcrypt is use for password encoder to protect users
+ *
+ * @author Quentin
+ *
+ */
 
 @Configuration
 @EnableWebSecurity

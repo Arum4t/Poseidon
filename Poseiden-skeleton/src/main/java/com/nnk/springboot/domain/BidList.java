@@ -7,7 +7,12 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.sql.Timestamp;
-
+/**
+ * Model of the bid list
+ *
+ * @author Quentin
+ *
+ */
 @Entity
 @Data
 @Table(name = "bidlist")

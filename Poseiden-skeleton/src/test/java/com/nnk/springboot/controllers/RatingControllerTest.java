@@ -42,7 +42,7 @@ class RatingControllerTest {
     void addRatingTest() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/rating/validate").with(csrf())
                         .param("moodysRating", "10")
-                        .param("sandPrating", "10")
+                        .param("sandPRating", "10")
                         .param("fitchRating", "15")
                         .param("orderNumber","20"))
                 .andExpect(redirectedUrl("/rating/list"))
@@ -55,7 +55,7 @@ class RatingControllerTest {
     void updateRatingTest() throws Exception {
         mockMvc.perform(MockMvcRequestBuilders.post("/rating/update/{id}", 302).with(csrf())
                         .param("moodysRating", "50")
-                        .param("sandPrating", "10")
+                        .param("sandPRating", "10")
                         .param("fitchRating", "15")
                         .param("orderNumber","20"))
                 .andExpect(redirectedUrl("/rating/list"))
@@ -68,7 +68,7 @@ class RatingControllerTest {
     void deleteRatingTest() throws Exception {
     Rating rating = new Rating();
     rating.setMoodysRating("3");
-    rating.setSandPrating("3");
+    rating.setSandPRating("3");
     rating.setOrderNumber(3);
     rating.setFitchRating("3");
     ratingRepository.save(rating);

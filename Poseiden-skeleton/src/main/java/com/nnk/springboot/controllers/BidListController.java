@@ -15,6 +15,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.util.List;
 
 
+/**
+ *
+ *
+ */
+
 @Controller
 public class BidListController {
     // TODO: Inject Bid service

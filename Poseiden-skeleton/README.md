@@ -1,3 +1,5 @@
+<a href="https://zupimages.net/viewer.php?id=23/34/nduu.png"><img src="https://zupimages.net/up/23/34/nduu.png" alt="" /></a>
+
 ## Languages and Tools
 <p align="center">
 <a href="https://www.java.com" target="_blank" rel="noreferrer"> 

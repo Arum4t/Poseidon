@@ -2,13 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
-<<<<<<< HEAD
-    </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="spring-boot-skeleton" target="17" />
-    </bytecodeTargetLevel>
-=======
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -21,6 +14,5 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="spring-boot-skeleton" options="-parameters" />
     </option>
->>>>>>> develop
   </component>
 </project>

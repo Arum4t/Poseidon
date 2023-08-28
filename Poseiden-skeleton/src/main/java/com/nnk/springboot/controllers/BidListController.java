@@ -41,11 +41,11 @@ private BidListRepository bidListRepository;
     }
 
     @PostMapping("/bidList/validate")
-    public String validateBid(@Valid BidList bid, BindingResult result, Model model) {
+    public String validateBid(@Valid BidList bidList, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "bidList/list";
+            return "bidList/add";
         }
-        bidListRepository.save(bid);
+        bidListRepository.save(bidList);
         model.addAttribute("message", "BidList add successfully !");
         return "redirect:/bidList/list";
     }

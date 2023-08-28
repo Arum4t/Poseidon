@@ -3,7 +3,6 @@ package com.nnk.springboot.domain;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.sql.Timestamp;
@@ -17,7 +16,6 @@ import java.sql.Timestamp;
 @Data
 @Table(name = "bidlist")
 public class BidList {
-    // TODO: Map columns in data table BIDLIST with corresponding java fields
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "bidListId", nullable = false)
@@ -25,6 +23,7 @@ public class BidList {
 
     @NotBlank(message = "Account is mandatory")
     private String account;
+
     @NotBlank(message = "Type is mandatory")
     private String type;
 

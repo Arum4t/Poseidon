@@ -26,10 +26,8 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @Configuration
 @EnableWebSecurity
 public class SpringSecurityConfig {
-
     @Autowired
     UserDetailsService userDetailsService;
-
     @Bean
     public static PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
@@ -51,7 +49,6 @@ public class SpringSecurityConfig {
                         .clearAuthentication(true)
                         .invalidateHttpSession(true)
                         .logoutSuccessUrl("/login"));
-
         return http.build();
     }
     @Bean

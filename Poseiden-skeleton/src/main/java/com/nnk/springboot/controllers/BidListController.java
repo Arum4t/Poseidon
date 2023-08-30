@@ -72,7 +72,8 @@ private BidListRepository bidListRepository;
     @GetMapping("/bidList/delete/{id}")
     public String deleteBid(@PathVariable("id") Integer id, Model model) {
         bidListRepository.findAll();
-        BidList bidList = bidListRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid bidList Id:" + id));
+        BidList bidList = bidListRepository.findById(id).orElseThrow(()
+                -> new IllegalArgumentException("Invalid bidList Id:" + id));
         bidListRepository.delete(bidList);
         model.addAttribute("bidList", bidListRepository.findAll());
         return "redirect:/bidList/list";
